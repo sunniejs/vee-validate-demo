@@ -12,6 +12,9 @@ git clone https://github.com/sunnie1992/vee-validate-demo.git
 # 安装依赖
 npm install
 
+#lesson1 搭建静态页面
+
+
 # 运用项目 localhost:8080
 npm run dev
  
