@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/vee-validate.svg">
+    <p>VeeValidate </p>
     <router-view/>
   </div>
 </template>
@@ -19,5 +20,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+img{
+   width:100px;
 }
 </style>
