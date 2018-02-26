@@ -4,7 +4,7 @@
       <div class="controls">
         <input name="name" type="text" v-model="name" placeholder="姓名">
       </div>
-      <button type="submit">下一步</button>
+      <button class="button" type="submit">下一步</button>
     </form>
   </div>
 </template>
@@ -69,6 +69,15 @@
   .sui-validate .controls .errortip {
     position: absolute;
     color: #ff0000;
+  }
+
+  .button {
+    background: #ff6600;
+    color: #ffffff;
+    border-radius: 5px;
+    width:80px;
+    height: 35px;
+    border:1px solid #ffffff;
   }
 
 </style>
