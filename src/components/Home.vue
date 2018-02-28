@@ -2,9 +2,10 @@
   <div class="form-box">
     <form class="sui-validate" method="" name="" @submit.prevent="submit">
       <div class="controls">
-        <input name="name" type="text" v-model="name" placeholder="姓名">
+        <input name="name" type="text" v-model="name" placeholder="姓名" v-validate="'required'">
+        <span v-show="errors.has('name')" class="help">{{ errors.first('name') }}</span>
       </div>
-      <button class="button" type="submit">下一步</button>
+      <button class="button" type="submit" :disabled="disabledFlag">下一步</button>
     </form>
   </div>
 </template>
@@ -14,6 +15,12 @@
     data() {
       return {
         name: ''
+      }
+    },
+    computed: {
+      disabledFlag() {
+        //验证不通过button disabled
+        return this.$validator.errors.has('name')
       }
     },
     methods: {
@@ -66,18 +73,23 @@
     position: relative;
   }
 
-  .sui-validate .controls .errortip {
-    position: absolute;
-    color: #ff0000;
-  }
+
 
   .button {
     background: #ff6600;
     color: #ffffff;
     border-radius: 5px;
-    width:80px;
+    width: 80px;
     height: 35px;
-    border:1px solid #ffffff;
+    border: 1px solid #ffffff;
+  }
+
+  .button:disabled {
+    opacity: .6;
+  }
+
+  .help {
+    color: #ff0000;
   }
 
 </style>
