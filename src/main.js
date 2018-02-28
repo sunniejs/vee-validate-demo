@@ -3,10 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
- 
-import VeeValidate from 'vee-validate';
 
-Vue.use(VeeValidate);
+import "./validator/validator.js"; //引入vee-lalidate验证
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
