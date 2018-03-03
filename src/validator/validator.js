@@ -15,7 +15,12 @@ Vue.use(VeeValidate, {
     zh_CN
   }
 });
-
+/*自定义方法*/
+Validator.extend("mobile", {
+  getMessage: field => "手机格式不正确",
+  validate: value =>
+    value.length === 11 && /^((13|14|15|17|18)[0-9]{1}\d{8})$/.test(value)
+});
 // 自定义validate
 const Dictionary = {
   zh_CN: {

@@ -1,9 +1,10 @@
 <template>
   <div class="form-box">
+    <p>自定义验证规则学习</span>
     <form class="sui-validate" method="" name="" @submit.prevent="submit">
       <div class="controls">
-        <input name="name" type="text" v-model="name" placeholder="姓名"  v-validate.initial="'required'">
-        <span v-show="errors.has('name')" class="help">{{ errors.first('name') }}</span>
+        <input name="mobile" type="text" v-model="name" placeholder="请输入电话" v-validate="'required|mobile'">
+        <span v-show="errors.has('mobile')" class="help">{{ errors.first('mobile') }}</span>
       </div>
       <button class="button" type="submit" :disabled="disabledFlag">下一步</button>
     </form>
@@ -11,7 +12,7 @@
 </template>
 <script>
   export default {
-    name: 'Home',
+    name: 'Step1',
     data() {
       return {
         name: ''
@@ -20,12 +21,12 @@
     computed: {
       disabledFlag() {
         //验证不通过button disabled
-        return this.$validator.errors.has('name')  
+        return this.$validator.errors.has('mobile')
       }
     },
     methods: {
       submit() {
-          this.$router.push({name:'step1'})
+
       }
     }
   }
