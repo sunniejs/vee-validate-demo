@@ -7,7 +7,7 @@
 ``` bash
 
 # clone项目
-git clone https://github.com/sunnie1992/vee-validate-demo.git
+git clone https://github.com/sunniejs/vee-validate-demo.git
 
 # 安装依赖
 npm install
